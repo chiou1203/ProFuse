@@ -11,7 +11,7 @@ We present ProFuse, an efficient context-aware framework for open-vocabulary 3D 
 ## 3. Feature Registration
 
 ## 4. Object Selection
-(assets/fig4.png)
+![](assets/fig4.png)
 
 ## 5. ToDo list
 
