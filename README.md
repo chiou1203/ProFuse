@@ -6,7 +6,7 @@ We present ProFuse, an efficient context-aware framework for open-vocabulary 3D 
 
 ## 1. Data preparation
 
-## 2. Pre-regostration
+## 2. Pre-registration
 
 ## 3. Feature registration
 
