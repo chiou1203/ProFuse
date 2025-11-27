@@ -84,8 +84,12 @@ chmod +x scripts/pre_registration.sh
 (TBA)
 ## 6. ToDo list
 
-- [ ] Data preprocessing
-- [ ] Pre-registration
-- [ ] Feature registration
+- [v] Data preprocessing
+- [v] Pre-registration
+- [v] Feature registration
 - [ ] Evaluation
 - [ ] Pretrained checkpoint
+
+## 6. Citation
+If you find our work useful, please consider cite it in your work.
+@inproceedings{profuse-2026,  title = {ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting},  author = {Anonymous},  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},  year = {2026}}
