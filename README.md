@@ -42,17 +42,46 @@ pip install -q submodules/langsplat-rasterization \
 ```
 
 ## 1. Data preparation
-(TBA)
+For pre-registration, prepare the scene folder like the following:
+
+```text
+data_root/
+├─ images/
+├─ sparse/
+└─ language_features/
+```
+
+For registration, move the 3DGS scene folder to data root :
+
+```text
+data_root/
+├─ images/
+├─ sparse/
+└─ language_features/
+└─ GS/
+└─ input.ply
+```
+
 ## 2. Pre-registration
-(TBA)
+You can run the following script for pre-registration.
+```bash
+chmod +x scripts/pre_registration.sh 
+./scripts/pre_registration.sh
+```
+
 ## 3. Feature registration
-(TBA)
+You can run the following script to do feature registration.
+```bash
+chmod +x scripts/pre_registration.sh 
+./scripts/registration.sh
+```
+
 ## 4. 3D object selection
 ![](assets/圖片63.png)
-
+(TBA)
 ## 5. 3D point cloud understanding
 ![](assets/圖片62.png)
-
+(TBA)
 ## 6. ToDo list
 
 - [ ] Data preprocessing
