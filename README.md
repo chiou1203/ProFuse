@@ -92,4 +92,6 @@ chmod +x scripts/pre_registration.sh
 
 ## 6. Citation
 If you find our work useful, please consider cite it in your work.
+```text
 @inproceedings{profuse-2026,  title = {ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting},  author = {Anonymous},  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},  year = {2026}}
+```
