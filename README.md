@@ -84,9 +84,7 @@ chmod +x scripts/pre_registration.sh
 (TBA)
 ## 6. ToDo list
 
-- [v] Data preprocessing
-- [v] Pre-registration
-- [v] Feature registration
+- [ ] Data preprocessing
 - [ ] Evaluation
 - [ ] Pretrained checkpoint
 
