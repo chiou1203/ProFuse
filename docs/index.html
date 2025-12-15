@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <!-- Template fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- IMPORTANT: these must exist locally (from the template ZIP) -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+
+  <style>
+    /* === Layout helpers (single column, centered) === */
+    .container.is-max-widescreen {
+      max-width: 1200px;   /* center page but allow large figures */
+    }
+
+    /* Large centered figures/tables */
+    .paper-figure {
+      width: 100%;
+      max-width: 1100px;   /* make big; increase to ~1200 if you want */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    /* Keep paragraphs readable (not super wide) */
+    .text-narrow {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .center-title {
+      text-align: center;
+    }
+
+    /* Slightly nicer separators */
+    .soft-hr {
+      margin: 2.25rem 0;
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    /* === Sketchfab grid (2 x 4), centered and wide === */
+    .sketchfab-grid-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sketchfab-embed {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 0;
+      display: block;
+      background: #fafafa;
+    }
+
+    .sketchfab-card {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    /* Reduce Bulma column gutter a bit for dense grid */
+    .sketchfab-grid-wrap .columns {
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+    }
+    .sketchfab-grid-wrap .column {
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO (template style) -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <!-- Anonymous title only -->
+          <h1 class="title is-1 publication-title">
+            ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting
+          </h1>
+
+          <!-- Non-clickable “buttons” (template look) -->
+          <div class="publication-links" style="margin-top: 18px;">
+            <span class="link-block">
+              <span class="external-link button is-normal is-rounded is-dark is-static">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </span>
+            </span>
+
+            <span class="link-block">
+              <span class="external-link button is-normal is-rounded is-dark is-static">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </span>
+            </span>
+
+            <span class="link-block">
+              <span class="external-link button is-normal is-rounded is-dark is-static">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </span>
+            </span>
+
+            <span class="link-block">
+              <span class="external-link button is-normal is-rounded is-dark is-static">
+                <span class="icon"><i class="fas fa-video"></i></span>
+                <span>Demo</span>
+              </span>
+            </span>
+          </div>
+
+          <p style="margin-top: 10px; color: #666;">
+            Project page (anonymous / under review). Links will be enabled later.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- OVERVIEW (single, centered) + ABSTRACT (below, centered) -->
+<section class="section">
+  <div class="container">
+
+    <!-- Overview figure: BIG, centered -->
+    <div class="center-title">
+      <img class="paper-figure" src="static/images/fig1_overview.png" alt="Overview figure">
+    </div>
+
+    <div style="height: 26px;"></div>
+
+    <!-- Abstract: centered heading + readable width -->
+    <h2 class="title is-3 center-title">Abstract</h2>
+    <div class="text-narrow">
+      <div class="content has-text-justified">
+        <p>
+          We present ProFuse, an efficient context-aware framework for open-vocabulary 3D scene understanding with
+          3D Gaussian Splatting (3DGS). The pipeline enhances cross-view consistency and intra-mask cohesion within a
+          direct registration setup, adding minimal overhead and requiring no render-supervised fine-tuning.
+          We introduce a dense correspondence-guided pre-registration phase that initializes Gaussians with accurate geometry
+          while jointly constructing 3D Context Proposals via cross-view clustering. Each proposal carries a global feature
+          obtained through weighted aggregation of member embeddings, and this feature is fused onto Gaussians during direct
+          registration to maintain per-primitive language coherence across views. ProFuse achieves strong open-vocabulary 3DGS
+          understanding while completing semantic attachment in about five minutes per scene, which is 2× faster than SOTA.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sketchfab MUST be upper: right after overview/abstract -->
+    <hr class="soft-hr">
+
+    <h2 class="title is-3 center-title">3D Visualizations</h2>
+  
+
+    <div class="sketchfab-grid-wrap" style="margin-top: 14px;">
+      <!-- 2 x 4 grid via Bulma columns/multiline -->
+      <div class="columns is-multiline is-variable is-2">
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 1"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_1/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 2"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_2/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 3"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_3/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 4"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_4/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 5"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_5/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 6"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_6/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 7"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_7/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <div class="sketchfab-card">
+            <iframe class="sketchfab-embed"
+              title="Sketchfab 8"
+              src="https://sketchfab.com/models/YOUR_MODEL_UID_8/embed?autospin=0.2&autostart=0&ui_hint=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- METHOD (single-column: text -> big figure -> next block) -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-12-tablet is-10-desktop is-8-widescreen">
+
+        <h2 class="title is-3 center-title">Efficient Pre-registration via dense correspondences</h2>
+
+        <figure class="paper-figure-block">
+          <img class="paper-figure" src="static/images/fig2.png" alt="Pre-registration figure">
+          <figcaption class="content has-text-justified">
+            <p>
+              A pretrained dense matcher supplies cross-view correspondences. We triangulate matched pixels to initialize
+              a compact Gaussian scene with accurate geometry, while simultaneously enabling cross-view grouping for context.
+            </p>
+          </figcaption>
+        </figure>
+
+        <hr class="soft-hr">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-12-tablet is-10-desktop is-8-widescreen">
+
+        <h2 class="title is-3 center-title">Global feature fusion with 3D Context Proposals</h2>
+
+        <figure class="paper-figure-block">
+          <img class="paper-figure" src="static/images/fig3.png" alt="Global feature fusion figure">
+          <figcaption class="content has-text-justified">
+            <p>
+              Warped masks are clustered across views into 3D Context Proposals. Each proposal aggregates a global feature,
+              which is fused onto Gaussians during direct registration to keep per-primitive language coherence across views.
+            </p>
+          </figcaption>
+        </figure>
+
+        <hr class="soft-hr">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- RESULTS -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-12-tablet is-10-desktop is-8-widescreen">
+
+        <h2 class="title is-3 has-text-centered">Results</h2>
+
+        <!-- Fig 4 -->
+        <figure class="paper-figure-block">
+          <img class="paper-figure" src="static/images/fig4.png" alt="Evaluation figure 1">
+          <figure class="paper-figure-block">
+            <img class="paper-figure" src="static/images/table1.png" alt="3D object selection table">
+          </figure>
+          <figcaption class="content has-text-justified">
+            <p>
+              ProFuse gives an outstanding performance in 3D Object Selection task. Our method isolates the queried object with far fewer background activations and ray-like spillovers,
+              yielding more semantically precise selections.
+            </p>
+          </figcaption>
+        </figure>
+
+        <!-- Fig 5 -->
+        <figure class="paper-figure-block">
+          <img class="paper-figure" src="static/images/fig5.png" alt="Evaluation figure 2">
+          <figcaption class="content has-text-justified">
+            <p>
+              In terms of point-level understanding, we achieve cleaner boundaries at furniture edges and fixtures
+              with fewer mixed colors at object–wall contacts.
+            </p>
+          </figcaption>
+        </figure>
+
+        <hr class="soft-hr">
+
+        <!-- Table 1 -->
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CITATION -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 center-title">Citation</h2>
+    <pre><code>@inproceedings{profuse2025,
+  title     = {ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting},
+  author    = {Anonymous},
+  booktitle = {Under Review},
+  year      = {2025}
+}</code></pre>
+  </div>
+</section>
+
+</body>
+</html>
