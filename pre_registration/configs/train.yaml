@@ -1,0 +1,50 @@
+defaults:
+  - gs: base
+  - _self_ 
+
+seed: 228
+
+wandb:
+  mode: "online" # "disabled" for no logging
+  entity: "3dcorrespondence"
+  project: "Adv3DGS"
+  group: null
+  name: null
+  tag: "debug"
+    
+train:
+  gs_epochs: 0 # number of 3dgs iterations
+  reduce_opacity: True 
+  no_densify: False # if True, the model will not be densified
+  max_lr: True 
+
+load:
+  gs: null #path to 3dgs checkpoint
+  gs_step: null #number of iterations, e.g. 7000
+
+device: "cuda:0"
+verbose: true
+
+init_wC:
+  use: True # use EDGS
+  matches_per_ref: 15_000 # number of matches per reference
+  num_refs: 180 # number of reference images
+  nns_per_ref: 3 # number of nearest neighbors per reference
+  scaling_factor: 0.001
+  proj_err_tolerance: 0.01
+  roma_model: "outdoors" # you can change this to "indoors" or "outdoors"
+  add_SfM_init : False
+  langfeat_dir: "/content/teatime/language_features"
+  langfeat_level: 1
+  cluster_tau_iou: 0.3
+  cluster_tau_bbox: 0.05
+  #langfeat_alpha: 0.4
+  #langfeat_beta: 0.2
+  #langfeat_gamma: 0.4
+  #langfeat_consensus_trim_pct: 10.0
+  #langfeat_consensus_erode: 1
+  #langfeat_consensus_rho: 1.0
+
+
+
+
