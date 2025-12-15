@@ -1,4 +1,7 @@
 # ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting
+
+🌐 [Project](docs/index.html) | 📄 Paper | 🤗 Dataset
+
 ![ProFuse framework](assets/圖片64.png)
 
 ProFuse is an efficient context-aware framework for open-vocabulary 3D scene understanding with 3D Gaussian Splatting. The pipeline enhances a direct registration setup with a dense correspondence–guided pre-registration phase, adding minimal overhead and requiring no render-supervised fine-tuning.
