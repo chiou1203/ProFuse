@@ -1,6 +1,6 @@
 # ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting
 
-🌐 [Project](https://chiou1203.github.io/ProFuse/) | 📄 Paper | 🤗 Demo
+🌐 Project | 📄 Paper | 🤗 Demo
 
 ![ProFuse framework](assets/圖片64.png)
 
