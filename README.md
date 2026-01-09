@@ -29,7 +29,7 @@ pip install -r requirements.txt
 Install submodules for pre-registration
 
 ```bash
-cd preregistration
+cd pre_registration
 pip install -q submodules/gaussian-splatting/submodules/diff-gaussian-rasterization
 pip install -q --no-deps submodules/RoMa
 ```
@@ -37,7 +37,7 @@ pip install -q --no-deps submodules/RoMa
 Install submodules for registration
 
 ```bash
-cd registration
+cd feature_registration
 pip install -q submodules/langsplat-rasterization \
                 submodules/segment-anything-langsplat \
                 submodules/simple-knn \
