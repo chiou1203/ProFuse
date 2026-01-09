@@ -54,6 +54,7 @@
     }
 
     /* === Sketchfab grid (2 x 4), centered and wide === */
+    
     .sketchfab-grid-wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -82,6 +83,25 @@
     .sketchfab-grid-wrap .column {
       padding: 0.5rem;
     }
+
+    /* Responsive frame that controls the size */
+    .sketchfab-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9. Try 62.5% for 16:10 if you want taller */
+      background: #fafafa;
+    }
+
+    /* Force iframe to fill the frame */
+    .sketchfab-frame > iframe {
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;
+      display: block;
+    }
+
   </style>
 </head>
 
@@ -102,36 +122,40 @@
           <!-- Non-clickable “buttons” (template look) -->
           <div class="publication-links" style="margin-top: 18px;">
             <span class="link-block">
-              <span class="external-link button is-normal is-rounded is-dark is-static">
+              <span class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2601.04754"
+                 target="_blank" rel="noopener">
                 <span class="icon"><i class="fas fa-file-pdf"></i></span>
                 <span>Paper</span>
               </span>
             </span>
 
             <span class="link-block">
-              <span class="external-link button is-normal is-rounded is-dark is-static">
+              <span class="eexternal-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2601.04754"
+                 target="_blank" rel="noopener">
                 <span class="icon"><i class="ai ai-arxiv"></i></span>
                 <span>arXiv</span>
               </span>
             </span>
 
             <span class="link-block">
-              <span class="external-link button is-normal is-rounded is-dark is-static">
+              <span class="eexternal-link button is-normal is-rounded is-dark" href="https://github.com/chiou1203/ProFuse"
+                 target="_blank" rel="noopener">
                 <span class="icon"><i class="fab fa-github"></i></span>
                 <span>Code</span>
               </span>
             </span>
 
             <span class="link-block">
-              <span class="external-link button is-normal is-rounded is-dark is-static">
-                <span class="icon"><i class="fas fa-video"></i></span>
+              <span class="eexternal-link button is-normal is-rounded is-dark" href="https://github.com/chiou1203/ProFuse"
+                 target="_blank" rel="noopener">
+                <span class="icon"><i class="fas fa-cube"></i></span>
                 <span>Demo</span>
               </span>
             </span>
           </div>
 
           <p style="margin-top: 10px; color: #666;">
-            Project page (anonymous / under review). Links will be enabled later.
+            Official Project page of PoFuse. Click the links for more information.
           </p>
 
         </div>
@@ -176,19 +200,24 @@
 
     <div class="sketchfab-grid-wrap" style="margin-top: 14px;">
       <div class="columns is-variable is-3 is-centered">
-        <!-- Left -->
+
         <div class="column is-6">
           <div class="sketchfab-card">
-            <iframe title="ProFuse Feature Visualization 0097" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2fc2c1491c414344aa5b611b5e2a8074/embed"> </iframe>
+            <div class="sketchfab-frame">
+              <iframe title="ProFuse Feature Visualization 0097" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2fc2c1491c414344aa5b611b5e2a8074/embed"> </iframe>
+            </div>
           </div>
         </div>
 
         <!-- Right -->
         <div class="column is-6">
           <div class="sketchfab-card">
-            <iframe title="ProFuse Feature Visualization 0352" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/46e79b8b3f604dc89bd5684b142f170a/embed"> </iframe>
+            <div class="sketchfab-frame">
+              <iframe title="ProFuse Feature Visualization 0352" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/46e79b8b3f604dc89bd5684b142f170a/embed"> </iframe>
+            </div>
           </div>
         </div>
+        
       </div>
     </div>
 
