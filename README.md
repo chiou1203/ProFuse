@@ -78,6 +78,7 @@ Please replace scene_dir with your own dataset directory.
 chmod +x pre_registration.sh 
 ./pre_registration.sh  --scene_dir /content/ramen
 ```
+After pre-registration is done, the Gaussian scene will be under the out_pre_registration folder, and 3D Context Proposal related metadata will be written into the language_features folder.
 
 ## 3. Feature registration
 You can run the following script to do feature registration. 
