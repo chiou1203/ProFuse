@@ -72,17 +72,18 @@ data_root/
 
 ## 2. Pre-registration
 You can run the following script for pre-registration.
-Replace scene_dir with your own dataset directory.
+Please replace scene_dir with your own dataset directory.
 ```bash
-chmod +x scripts/pre_registration.sh 
-./scripts/pre_registration.sh  --scene_dir /content/ramen
+chmod +x pre_registration.sh 
+./pre_registration.sh  --scene_dir /content/ramen
 ```
 
 ## 3. Feature registration
-You can run the following script to do feature registration.
+You can run the following script to do feature registration. 
+Please make sure both the gs folder and language feature folder with context proposal metadata exists.
 ```bash
-chmod +x scripts/pre_registration.sh 
-./scripts/registration.sh
+chmod +x registration.sh
+./registration.sh
 ```
 
 ## 4. 3D object selection
