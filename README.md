@@ -26,7 +26,7 @@ pip install -q --no-deps loguru
 Install submodules for pre-registration
 
 ```bash
-cd pre_registration
+cd ProFuse/pre_registration
 
 mkdir -p submodules
 
@@ -35,6 +35,7 @@ git clone --recursive https://github.com/chiou1203/gaussian-splatting submodules
 cd submodules/gaussian-splatting
 git checkout profuse-v1
 
+cd ProFuse/pre_registration
 pip install -q submodules/gaussian-splatting/submodules/diff-gaussian-rasterization
 pip install -q --no-deps submodules/RoMa
 ```
@@ -42,7 +43,7 @@ pip install -q --no-deps submodules/RoMa
 Install submodules for registration
 
 ```bash
-cd feature_registration
+cd ProFuse/feature_registration
 pip install -q submodules/langsplat-rasterization \
                 submodules/segment-anything-langsplat \
                 submodules/simple-knn \
