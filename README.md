@@ -17,19 +17,24 @@ cd ProFuse
 Setup
 
 ```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 pip install fused-local-corr==0.1.1 pycolmap hydra-core tqdm torchmetrics lpips matplotlib rich plyfile \
             imageio imageio-ffmpeg plotly scikit-learn moviepy==2.1.1 ffmpeg numpy==1.26.4 open_clip_torch
 pip install -q --no-deps loguru
-pip uninstall -y blosc2 dataproc-spark-connect bigframes libpysal plotnine \
-                  geopandas thinc treescope tensorflow tsfresh || true
-pip install -r requirements.txt
 ```
 
 Install submodules for pre-registration
 
 ```bash
 cd pre_registration
+
+mkdir -p submodules
+
+git clone --recursive https://github.com/Parskatt/RoMa.git submodules/RoMa
+git clone --recursive https://github.com/chiou1203/gaussian-splatting submodules/gaussian-splatting
+cd submodules/gaussian-splatting
+git checkout profuse-v1
+
 pip install -q submodules/gaussian-splatting/submodules/diff-gaussian-rasterization
 pip install -q --no-deps submodules/RoMa
 ```
@@ -67,9 +72,10 @@ data_root/
 
 ## 2. Pre-registration
 You can run the following script for pre-registration.
+Replace scene_dir with your own dataset directory.
 ```bash
 chmod +x scripts/pre_registration.sh 
-./scripts/pre_registration.sh
+./scripts/pre_registration.sh  --scene_dir /content/ramen
 ```
 
 ## 3. Feature registration
