@@ -89,11 +89,11 @@ chmod +x registration.sh
 ```
 
 ## 4. 3D object selection
-![](assets/圖片63.png)
-(TBA)
+![](assets/fig4_new.png)
+
 ## 5. 3D point cloud understanding
 ![](assets/圖片62.png)
-(TBA)
+
 ## 6. ToDo list
 
 - [ ] Data preprocessing
