@@ -101,6 +101,29 @@
       border: 0;
       display: block;
     }
+    /* === Header: venue badge, authors, emails === */
+    .venue-badge {
+      display: inline-block;
+      padding: 0.45rem 1.15rem;
+      border-radius: 999px;
+      background: #1f2a44;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+    .publication-emails {
+      margin-top: 6px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .publication-emails a {
+      color: #666;
+      margin: 0 0.5rem;
+    }
+    .publication-emails a:hover { color: #3273dc; }
+
     .publication-links { position: relative; z-index: 10; }
     .publication-links a { pointer-events: auto; }
 
@@ -116,12 +139,37 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
 
-          <!-- Anonymous title only -->
           <h1 class="title is-1 publication-title">
             ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting
           </h1>
 
-          <!-- Non-clickable “buttons” (template look) -->
+          <!-- Venue -->
+          <div class="publication-venue" style="margin: 6px 0 18px;">
+            <span class="venue-badge">🏆&nbsp; Accepted to WACV 2027</span>
+          </div>
+
+          <!-- Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/chiou1203" target="_blank" rel="noopener noreferrer">Yen-Jen Chiou</a>,
+            </span>
+            <span class="author-block">Wei-Tse Cheng,</span>
+            <span class="author-block">Yuan-Fu Yang</span>
+          </div>
+
+          <!-- Affiliation -->
+          <div class="is-size-5 publication-authors" style="margin-top: 4px;">
+            <span class="author-block">National Yang Ming Chiao Tung University</span>
+          </div>
+
+          <!-- Emails -->
+          <div class="publication-emails">
+            <a href="mailto:remi.ii13@nycu.edu.tw">remi.ii13@nycu.edu.tw</a>
+            <a href="mailto:andy5552555.ii13@nycu.edu.tw">andy5552555.ii13@nycu.edu.tw</a>
+            <a href="mailto:yfyangd@nycu.edu.tw">yfyangd@nycu.edu.tw</a>
+          </div>
+
+          <!-- Links -->
           <div class="publication-links" style="margin-top: 18px;">
 
             <span class="link-block">
@@ -344,14 +392,11 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 center-title">Citation</h2>
-    <pre><code>@misc{chiou2026profuseefficientcrossviewcontext,
-      title={ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting}, 
-      author={Yen-Jen Chiou and Wei-Tse Cheng and Yuan-Fu Yang},
-      year={2026},
-      eprint={2601.04754},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2601.04754}, 
+    <pre><code>@inproceedings{chiou2027profuse,
+  title     = {ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting},
+  author    = {Chiou, Yen-Jen and Cheng, Wei-Tse and Yang, Yuan-Fu},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year      = {2027}
 }</code></pre>
   </div>
 </section>
