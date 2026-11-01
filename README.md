@@ -89,7 +89,7 @@ chmod +x registration.sh
 ```
 
 ## 4. 3D object selection
-![](assets/fig4_new.png)
+![](assets/fig4_new2.png)
 
 ## 5. 3D point cloud understanding
 ![](assets/圖片62.png)
